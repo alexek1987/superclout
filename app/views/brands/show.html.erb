@@ -11,11 +11,11 @@
   <div class="row">
     <% @listings.each do |listing| %>
     <div class="col-md-4 mb-3">
-      <a href="">
+      <%= link_to listing_path(listing) do %>
      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= listing.image_url %>)">
       <%= listing.product %>
       </div>
-      </a>
+      <% end %>
       </div>
     <% end %>
   </div>
@@ -35,4 +35,4 @@
   </div>
 </div>
 
-<%= link_to "See all brands", root_path, class: 'btn btn-secondary' %>
+<%= link_to "Back to all brands", root_path, class: 'btn btn-secondary' %>
