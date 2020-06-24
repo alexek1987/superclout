@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h1>Add your brand</h1>
+      <%= simple_form_for @brand do |f| %>
+      <%= f.input :name %>
+      <%= f.input :banner_url %>
+      <%= f.submit "Add brand", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

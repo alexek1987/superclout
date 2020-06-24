@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'listings/create'
+  get 'listings/destroy'
+  get 'listings/show'
+  # get 'brands/index'
+  # get 'brands/show'
+  # get 'brands/new'
+  # get 'brands/create'
+  root "brands#index"
+  resources :brands, only:[:show, :new, :create] do
+    resources :listings, only: :create
+  end
+  resources :listings, only: [:destroy, :show]
 end

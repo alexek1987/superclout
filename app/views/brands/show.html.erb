@@ -1,0 +1,23 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @brand.banner_url %>);">
+  <div class="container">
+    <h1> <%= @brand.name %></h1>
+    <!-- <p>tagline</p> -->
+    <!-- <a class="btn btn-flat" href="#">Message brand</a> -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h1>Add a listing</h1>
+      <%= simple_form_for [@brand, @listing] do |f| %>
+      <%= f.input :product %>
+      <%= f.input :image_url %>
+      <%= f.submit "Create listing", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "See all brands", root_path, class: 'btn btn-secondary' %>
