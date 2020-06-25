@@ -1,3 +1,10 @@
+
+<div class="banner">
+      <h1>SuperClout</h1>
+      <p>$99 per advert</p>
+</div>
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">
@@ -5,10 +12,10 @@
       <%= simple_form_for @brand do |f| %>
       <%= f.input :name %>
       <%= f.input :banner_url %>
-      <%= f.submit "Add brand", class: "btn btn-secondary" %>
+      <%= f.submit "Add brand", class: "btn btn-success" %>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to "Back to all brands", root_path, class: 'btn btn-secondary' %>
+<%= link_to "Back to all brands", root_path %>

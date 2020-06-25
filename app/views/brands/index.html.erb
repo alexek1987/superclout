@@ -1,10 +1,37 @@
+<!-- banner -->
+<div class="banner">
+  <h1>SuperClout</h1>
+  <p>The website and SuperClout App is a digital platform for products, brands and services to connect with influencers, ambassadors and promoters. Find the right Social Media envoy for your brand.</p>
+  <p>Start now</p>
+  <button type="button" class="btn btn-warning">Brand</button>
+  <button type="button" class="btn btn-warning">Superclout</button>
+</div>
+<br>
 <div class="container">
-<h1>All Brands</h1>
-
-<% @brands.each do |brand| %>
-<%= link_to brand.name, brand %>
-<% end %>
-
-<%= link_to "Add your brand", new_brand_path %>
+<form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search, brand, product, country..."
+    aria-label="Search">
+</form>
 </div>
 
+<!-- Brand cards -->
+<div class="container py-5">
+<h3>All Brands</h3>
+<%= link_to "Add your brand", new_brand_path %>
+  <div class="row">
+   <% @brands.each do |brand| %>
+    <div class="col-md-4 mb-3">
+      <%= link_to brand_path(brand) do %>
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= brand.banner_url %>)">
+      <%= brand.name %>
+      </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+<h3>All Offers</h3>
+
+</div>

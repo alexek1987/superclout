@@ -12,32 +12,28 @@
 @import "components/index";
 @import "pages/index";*/
 
+
 /*banner*/
+
 .btn-success {
   color: white;
 }
 
 .banner {
+  background-image: url("https://source.unsplash.com/random");
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+  color: white;
+  padding: 120px 0;
 }
-
 .banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 50px;
 }
-
 .banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  opacity: 0.8;
 }
-
 /*Buttons*/
 
 .btn-ghost {
@@ -148,6 +144,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
+  width: 100%;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 
@@ -169,6 +166,60 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+
+/*search*/
+
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+
+
+.flash {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.flash-success {
+  border: 2px solid #1EDD88;
+}
+
+.flash-warning {
+  border: 2px solid #FFC65A;
+}
+
+.flash-danger {
+  border: 2px solid #FD1015;
+}
+
+
 
 
 
