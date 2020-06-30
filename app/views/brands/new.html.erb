@@ -1,20 +1,16 @@
-
 <div class="banner">
       <h1>SuperClout</h1>
       <p>$99 per advert</p>
 </div>
 
-
-<div class="container">
   <div class="row">
     <div class="col-md-6 mx-auto">
       <h1>Add your brand</h1>
       <%= simple_form_for @brand do |f| %>
       <%= f.input :name %>
-      <%= f.input :banner_url %>
-      <%= f.submit "Add brand", class: "btn btn-success" %>
+      <%= f.input :photo, as: :file, input_html: { required: true } %>
+      <%= f.submit "Add brand", class: "btn btn-warning" %>
       <% end %>
-    </div>
   </div>
 </div>
 

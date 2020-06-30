@@ -7,13 +7,14 @@
 </div>
 
 
+
 <div class="container py-5">
   <div class="row">
     <% @listings.each do |listing| %>
     <div class="col-md-4 mb-3">
       <%= link_to listing_path(listing) do %>
-     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= listing.image_url %>)">
-      <%= listing.product %>
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <%= listing.product %>
       </div>
       <% end %>
       </div>
@@ -27,8 +28,8 @@
       <h1>Add an influencer offer</h1>
       <%= simple_form_for [@brand, @listing] do |f| %>
       <%= f.input :product %>
-      <%= f.input :image_url %>
-      <%= f.submit "Create listing", class: "btn btn-success" %>
+      <%= f.input :photo, as: :file, input_html: { required: true } %>
+      <%= f.submit "Create listing", class: "btn btn-warning" %>
       <% end %>
     </div>
 

@@ -3,17 +3,33 @@
   <h1>SuperClout</h1>
   <p>The website and SuperClout App is a digital platform for products, brands and services to connect with influencers, ambassadors and promoters. Find the right Social Media envoy for your brand.</p>
   <p>Start now</p>
-  <button type="button" class="btn btn-warning">Brand</button>
-  <button type="button" class="btn btn-warning">Superclout</button>
+  <button type="button" class="btn-ghost">Brand</button>
+  <button type="button" class="btn-ghost">Superclout</button>
 </div>
 <br>
-<div class="container">
-<form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-  <i class="fas fa-search" aria-hidden="true"></i>
-  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search, brand, product, country..."
-    aria-label="Search">
-</form>
+
+<%= render "shared/search-bar" %>
+
+<!-- listings cards -->
+<div class="container py-5">
+  <h3>Latest Listings</h3>
+  <div class="row">
+    <% @brands.each do |brand| %>
+      <div class="col-md-4 mb-3">
+        <% if brand.listings[-1] %>
+        <%= link_to listing_path(brand.listings[-1]) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path brand.listings[-1].photo %>')">
+          <%= brand.listings[-1].product %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
+
 
 <!-- Brand cards -->
 <div class="container py-5">
@@ -23,7 +39,7 @@
    <% @brands.each do |brand| %>
     <div class="col-md-4 mb-3">
       <%= link_to brand_path(brand) do %>
-     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= brand.banner_url %>)">
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path brand.photo.key, height: 300, width: 400, crop: :fill %>')">
       <%= brand.name %>
       </div>
       <% end %>
@@ -31,7 +47,3 @@
     <% end %>
   </div>
 
-
-<h3>All Offers</h3>
-
-</div>

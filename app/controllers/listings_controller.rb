@@ -18,6 +18,6 @@ end
 
 private
   def listing_params
-    params.require(:listing).permit(:product, :image_url)
+    params.require(:listing).permit(:product, :photo)
   end
 end

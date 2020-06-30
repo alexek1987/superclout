@@ -1,4 +1,5 @@
 class Brand < ApplicationRecord
+  has_one_attached :photo
   has_many :listings
-  validates :name, :banner_url, presence: true
+  validates :name, presence: true
 end
