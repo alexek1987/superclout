@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @brand.banner_url %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @brand.photo.key, height: 300, width: 400, crop: :fill %>')">
   <div class="container">
     <h1> <%= @brand.name %></h1>
     <!-- <p>tagline</p> -->
