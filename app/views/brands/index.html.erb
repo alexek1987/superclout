@@ -1,10 +1,12 @@
 <!-- banner -->
 <div class="banner">
   <h1>SuperClout</h1>
-  <p>The website and SuperClout App is a digital platform for products, brands and services to connect with influencers, ambassadors and promoters. Find the right Social Media envoy for your brand.</p>
-  <p>Start now</p>
-  <button type="button" class="btn-ghost">Brand</button>
-  <button type="button" class="btn-ghost">Superclout</button>
+  <p>SuperClout is a digital platform for products, brands and services to connect with influencers, ambassadors and promoters.</p>
+  <p>Find the right Social Media envoy for your brand.</p>
+  <p><strong>Or become a SuperClout influencer</strong></p>
+  <div class="sign-up-btn">
+  <%= link_to "Start now", new_user_registration_path, class: "btn btn-warning btn-lg btn-block" %>
+  </div>
 </div>
 <br>
 
@@ -27,9 +29,6 @@
     <% end %>
   </div>
 </div>
-
-
-
 
 <!-- Brand cards -->
 <div class="container py-5">

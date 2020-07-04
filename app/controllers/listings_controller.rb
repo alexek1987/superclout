@@ -1,4 +1,9 @@
 class ListingsController < ApplicationController
+
+  def new
+    @listing = Listing.new
+  end
+
   def create
     @listing = Listing.new(listing_params)
     @brand = Brand.find(params[:brand_id])
@@ -14,10 +19,11 @@ end
   end
 
   def show
+    @listing = Listing.find(params[:id])
   end
 
 private
   def listing_params
-    params.require(:listing).permit(:product, :photo)
+    params.require(:listing).permit(:product, :description, :photo)
   end
 end

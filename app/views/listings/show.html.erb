@@ -1,7 +1,9 @@
-
-
-  <div class="content">
+<div class="listing-container">
+<div class="content">
   <div class="photo">
-    <h1> <%= @listing %></h1>
+    <%= cl_image_tag @listing.photo.key %>
+  </div>
+  <h2><%= @listing.product %></h4>
+  <p><%= @listing.description %></p>
   </div>
 </div>
