@@ -4,45 +4,13 @@
   <p>SuperClout is a digital platform for products, brands and services to connect with influencers, ambassadors and promoters.</p>
   <p>Find the right Social Media envoy for your brand.</p>
   <p><strong>Or become a SuperClout influencer</strong></p>
-  <div class="sign-up-btn">
-  <%= link_to "Start now", new_user_registration_path, class: "btn btn-warning btn-lg btn-block" %>
-  </div>
+  <%= link_to "Start now", new_user_registration_path, class: "btn btn-outline-warning" %>
 </div>
-<br>
 
 <%= render "shared/search-bar" %>
+<%= render "shared/card-trip" %>
+<%= render "shared/brand-cards" %>
 
-<!-- listings cards -->
-<div class="container py-5">
-  <h3>Latest Listings</h3>
-  <div class="row">
-    <% @brands.each do |brand| %>
-      <div class="col-md-4 mb-3">
-        <% if brand.listings[-1] %>
-        <%= link_to listing_path(brand.listings[-1]) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path brand.listings[-1].photo.key %>')">
-          <%= brand.listings[-1].product %>
-          </div>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
 
-<!-- Brand cards -->
-<div class="container py-5">
-<h3>All Brands</h3>
-<%= link_to "Add your brand", new_brand_path %>
-  <div class="row">
-   <% @brands.each do |brand| %>
-    <div class="col-md-4 mb-3">
-      <%= link_to brand_path(brand) do %>
-     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path brand.photo.key, height: 300, width: 400, crop: :fill %>')">
-      <%= brand.name %>
-      </div>
-      <% end %>
-      </div>
-    <% end %>
-  </div>
+
 
