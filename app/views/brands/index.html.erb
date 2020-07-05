@@ -1,18 +1,21 @@
 <!-- banner -->
 <div class="banner">
   <h1>SuperClout</h1>
-  <p>SuperClout is a digital platform for products, brands and
-    services to connect with influencers, ambassadors
-    and promoters.</p>
-  <p>Find the right Social Media envoy for your brand.</p>
-  <p><strong>Or become a SuperClout influencer</strong></p>
+  <p>Digital platform for products, brands and services to connect with influencers, ambassadors and promoters</p>
+
+  <div class="brand-signup">
+     <p>Find the right Social Media envoy for your brand</p>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-primary" %>
+  </div>
+  <p><strong>Become SuperClout influencer</strong></p>
+  <p>Login and start loving</p>
   <div class="banner-icons">
- <!--  <% link_to "Start now", new_user_registration_path %> -->
    <a href="#"><i class="fab fa-instagram"></i></a>
   <a href="#"><i class="fab fa-facebook"></i></a>
   <a href="#"><i class="fab fa-youtube"></i></a>
   <a href="#"><i class="fab fa-twitter"></i></a>
   </div>
+
 </div>
 
 <%= render "shared/search-bar" %>

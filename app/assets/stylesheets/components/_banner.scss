@@ -4,8 +4,8 @@
   color: black;
   padding: 120px 0;
   margin-top: -150px;
-  height: 700px;
-  text-align: left;
+  height: 800px;
+  text-align: center;
 }
 .banner h1 {
   font-size: 50px;
@@ -23,6 +23,8 @@
 
 .banner-icons {
   display: flex;
-  margin-left: 5vh;
+  justify-content: center;
+
   font-size: 50px;
+
 }
