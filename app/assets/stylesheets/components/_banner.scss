@@ -8,13 +8,13 @@
   text-align: center;
 }
 .banner h1 {
-  font-size: 50px;
+  font-size: 30px;
   margin-top: 160px;
   margin-left: 20px;
 
 }
 .banner p {
-  font-size: 30px;
+  font-size: 20px;
   font-style: italic;
   font-weight: lighter;
   opacity: 0.8;
@@ -24,7 +24,8 @@
 .banner-icons {
   display: flex;
   justify-content: center;
-
   font-size: 50px;
-
+}
+.btn-brand-signup {
+  margin-bottom: 6px;
 }
