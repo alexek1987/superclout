@@ -28,7 +28,9 @@ end
   end
 
   def show
+
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
 private

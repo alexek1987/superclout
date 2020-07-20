@@ -1,22 +1,16 @@
 class BrandsController < ApplicationController
    before_action :set_brand, only: [:new, :create, :show, :edit, :update, :destroy]
   def index
-
     @brands = Brand.all
-
-
   end
 
   def show
-
     @brand = Brand.find(params[:id])
     @listings = @brand.listings
     @listing = Listing.new
-
   end
 
   def new
-
     @brand = Brand.new
      authorize @brand
   end
@@ -46,10 +40,8 @@ class BrandsController < ApplicationController
 private
 
 def set_brand
-
    @brand = Brand.new
-
-  end
+end
 
   def brand_params
     params.require(:brand).permit(:name, :photo)

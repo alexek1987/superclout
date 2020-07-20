@@ -1,8 +1,9 @@
 <!-- Brand cards -->
 <div class="container py-5">
 <h3>All Brands</h3>
-
+<div class="add-brand-btn">
 <%= link_to "Add your brand", new_brand_path, class:"btn btn-ghost" %>
+</div>
   <div class="row">
    <% @brands.each do |brand| %>
     <div class="col-md-4 mb-3">
