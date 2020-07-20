@@ -25,8 +25,13 @@
   opacity: 0.5;
 }
 
- .navbar-light .navbar-nav .nav-link {
-  color: white;
+ .nav-link {
+  color: #fcf9f9 !important;
+  text-shadow: 1px 1px #1e1a1a;
+ }
+
+ .nav-link:hover {
+  opacity: 0.9;
  }
 
 
