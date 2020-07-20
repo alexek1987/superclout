@@ -1,10 +1,13 @@
 class ListingsController < ApplicationController
 
+  def index
+    @brands = Brand.all
+    @listings = Listing.all
+  end
+
 
   def new
-
     @listing = Listing.new
-
   end
 
   def create

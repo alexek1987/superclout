@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'listings/create'
   get 'listings/destroy'
   get 'listings/show'
+  get 'listings/index'
   # get 'brands/index'
   # get 'brands/show'
   # get 'brands/new'

@@ -11,8 +11,16 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Dashboard</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <%= link_to "All listings", listings_index_path, class: "nav-link" %>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="">Messages</a>
+
+
       </li>
       <% if user_signed_in? %>
       <li class="nav-item">
