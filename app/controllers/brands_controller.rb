@@ -1,7 +1,9 @@
 class BrandsController < ApplicationController
+
    skip_before_action :authenticate_user!, only: [:index]
 
    before_action :set_brand, only: [:new, :create, :show, :edit, :update, :destroy]
+
   def index
 
     @brands = Brand.all
@@ -9,44 +11,46 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
     @listings = @brand.listings
     @listing = Listing.new
-    authorize @brand
   end
 
   def new
     @brand = Brand.new
-     authorize @brand
+    authorize @brand
   end
 
   def create
-    authorize @brand
     @brand = Brand.new(brand_params)
+    authorize @brand
     if @brand.save
       redirect_to brand_path(@brand)
     else
       render :new
     end
+  end
 
-    def edit
-      authorize @brand
-    end
+  def edit
+  end
 
-    def update
-      authorize @brand
-    end
-
-    def destroy
-      authorize @brand
+  def update
+    if @brand.update(brand_params)
+      redirect_to brand_path(@brand)
+    else
+      render :edit
     end
   end
 
-private
+  def destroy
+    @brand.destroy
+  end
 
-def set_brand
-   @brand = Brand.new
-end
+  private
+
+  def set_brand
+    @brand = Brand.find(params[:id])
+    authorize @brand
+  end
 
   def brand_params
     params.require(:brand).permit(:name, :photo)

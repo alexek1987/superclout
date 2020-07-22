@@ -1,10 +1,10 @@
 class ListingsController < ApplicationController
+  before_action :set_listing, only: [:show, :destroy]
 
   def index
     @brands = Brand.all
     @listings = Listing.all
   end
-
 
   def new
     @listing = Listing.new
@@ -12,7 +12,6 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-
     @brand = Brand.find(params[:brand_id])
     @listing.brand = @brand
     authorize @listing
@@ -20,20 +19,33 @@ class ListingsController < ApplicationController
       redirect_to brand_path(@brand)
     else
       render "brands/show"
+    end
   end
-end
 
   def destroy
-    authorize @listing
+    @listing.destroy
   end
 
   def show
+  end
 
+  # def edit
+  # end
+
+  # def update
+  #   if @listing.update(listing_params)
+  #     redirect_to brand_path(@brand)
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+  private
+  def set_listing
     @listing = Listing.find(params[:id])
     authorize @listing
   end
 
-private
   def listing_params
     params.require(:listing).permit(:product, :description, :photo)
   end
