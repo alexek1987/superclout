@@ -1,7 +1,13 @@
 class BrandsController < ApplicationController
-   before_action :set_brand, only: [:show, :edit, :update, :destroy]
+
+   skip_before_action :authenticate_user!, only: [:index]
+
+   before_action :set_brand, only: [:new, :create, :show, :edit, :update, :destroy]
+
   def index
+
     @brands = Brand.all
+
   end
 
   def show
