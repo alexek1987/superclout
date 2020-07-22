@@ -8,6 +8,7 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     @listings = @brand.listings
     @listing = Listing.new
+    authorize @brand
   end
 
   def new
