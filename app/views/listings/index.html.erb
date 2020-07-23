@@ -10,20 +10,23 @@
   <div class="row listing-brands-container">
     <% @listings.each do |listing| %>
       <div class="col-md-4 mb-3">
-        <%= link_to listing_path(listing) do %>
         <% if listing.photo.attached? %>
           <div class="card-category" data-listing-id="<%= listing.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path listing.photo.key, angle: 0 %>)"><%= listing.product %>
           <div class="card-description">
-            <p>❤️</p>
+                      <%= button_to '❤️' ,{:controller => 'campaigns', :action => 'create', :listing_id => listing.id}, {:method => :post} %>
+
           </div>
           </div>
             <% else %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1568688570940-831467d18af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)">
                 <%= listing.product %>
+                          <div class="card-description">
+                      <%= button_to '❤️', {:controller => 'campaigns', :action => 'create', :listing_id => listing.id}, {:method => :post} %>
+
+          </div>
               </div>
             <% end %>
           </div>
-        <% end %>
       <% end %>
       <%= render "shared/brand-cards" %>
       </div>

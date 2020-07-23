@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   resources :brands, only:[:show, :new, :create] do
     resources :listings, only: :create
   end
-  resources :listings, only: [:destroy, :show]
+  resources :listings, only: [:destroy, :show] do
+    resources :campaigns, only: [:new, :create]
+  end
+
+  resources :campaigns, only: [:edit, :update, :destroy, :show, :index]
 end

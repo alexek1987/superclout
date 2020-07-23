@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_105939) do
+ActiveRecord::Schema.define(version: 2020_07_23_072748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2020_07_04_105939) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "campaigns", force: :cascade do |t|
+    t.string "status", default: "Requested"
+    t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_campaigns_on_listing_id"
+    t.index ["user_id"], name: "index_campaigns_on_user_id"
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "product"
     t.string "image_url"
@@ -66,5 +76,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_105939) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "campaigns", "listings"
+  add_foreign_key "campaigns", "users"
   add_foreign_key "listings", "brands"
 end
