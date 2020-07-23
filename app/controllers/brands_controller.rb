@@ -11,18 +11,24 @@ class BrandsController < ApplicationController
   end
 
   def show
+    @brand = Brand.find(params[:id])
     @listings = @brand.listings
     @listing = Listing.new
+    authorize @brand
   end
 
   def new
+
     @brand = Brand.new
+
     authorize @brand
+
   end
 
   def create
-    @brand = Brand.new(brand_params)
     authorize @brand
+    @brand = Brand.new(brand_params)
+
     if @brand.save
       redirect_to brand_path(@brand)
     else
