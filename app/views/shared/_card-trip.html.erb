@@ -7,7 +7,7 @@
       <% if brand.listings[-1] %>
       <%= link_to listing_path(brand.listings[-1]) do %>
       <div class="card-trip">
-        <%= cl_image_tag brand.listings[-1].photo.key %>
+        <%= cl_image_tag brand.listings[-1].photo.key%>
         <div class="card-trip-infos">
           <div>
             <h2><%= brand.listings[-1].product %></h2>
