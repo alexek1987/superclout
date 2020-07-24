@@ -7,17 +7,18 @@ class CampaignsController < ApplicationController
   
     def new
       @campaign = Campaign.new
+      authorize @campaign
     end
   
     def create
       @campaign = Campaign.new(campaign_params)
+      authorize @campaign
       @listing = Listing.find(params[:listing_id])
       @user = current_user
       @campaign.listing = @listing
       @campaign.user = @user
-      authorize @campaign
       if @campaign.save
-        redirect_to campaign_path(@campaign), notice: "Campaign requested"
+        redirect_to request.referrer, notice: "Campaign requested"
       else
         render "listings/index", alert: "Campaign couldn't be requested"
       end
@@ -48,7 +49,7 @@ class CampaignsController < ApplicationController
     end
   
     def campaign_params
-      params.require(:campaign).permit(:status)
+      params.require(:campaign).permit(:status, :listing_id, :user_id)
     end
   end
   

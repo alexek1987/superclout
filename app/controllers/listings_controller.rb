@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
     @brands = Brand.all
     @listings = Listing.all
     @campaign = Campaign.new
+
   end
 
   def new
