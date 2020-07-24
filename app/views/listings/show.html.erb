@@ -6,5 +6,10 @@
   <h2><%= @listing.product %></h4>
   <p><%= @listing.description %></p>
   </div>
+          <%= form_for [@listing, @campaign] do |f| %>
+          <%= f.hidden_field :listing_id, value: @listing.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "❤️" %>
+          <% end %>
 </div>
 

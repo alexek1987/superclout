@@ -13,14 +13,10 @@ class CampaignsController < ApplicationController
     def create
       @campaign = Campaign.new(campaign_params)
       authorize @campaign
-      @listing = Listing.find(params[:listing_id])
-      @user = current_user
-      @campaign.listing = @listing
-      @campaign.user = @user
       if @campaign.save
         redirect_to request.referrer, notice: "Campaign requested"
       else
-        render "listings/index", alert: "Campaign couldn't be requested"
+        redirect_to request.referrer, alert: "Campaign couldn't be requested"
       end
     end
   

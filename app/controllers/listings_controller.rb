@@ -5,7 +5,6 @@ class ListingsController < ApplicationController
     @brands = Brand.all
     @listings = Listing.all
     @campaign = Campaign.new
-
   end
 
   def new
@@ -29,7 +28,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @campaigns = Campaign.where(listing_id: @listing.id)
+    @campaign = Campaign.new
   end
 
   # def edit
