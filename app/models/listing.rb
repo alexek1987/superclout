@@ -3,6 +3,7 @@ class Listing < ApplicationRecord
   has_one_attached :photo
   validates :product, presence: :true
   validates :description, presence: :true
+  validates :cities, presence: true
 end
 
-# city column needs to be added (can be multiple cities/or global, or one city)
+# city column needs to be added (can be multiple cities/or global, or one city) - done
