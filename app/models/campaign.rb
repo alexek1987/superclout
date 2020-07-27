@@ -3,7 +3,7 @@ class Campaign < ApplicationRecord
   belongs_to :listing
   validates :status, presence: true, :inclusion => { in: ["Requested", "Offered", "Accepted", "Declined", "Cancelled", "Active", "Completed"]}
 end
-#add columns start and end date, offer $$
+#added columns start and end date, offer $$
 
 # requested - the superclout likes the product
 # offered - the brand owner comes back with an offer of $$ and start and end date
