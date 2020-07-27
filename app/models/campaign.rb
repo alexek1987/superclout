@@ -7,7 +7,7 @@ end
 
 # requested - the superclout likes the product
 # offered - the brand owner comes back with an offer of $$ and start and end date
-# superclout reads the offer, negotitates with owner over chat
+# superclout reads the offer, negotitates with owner over chat (need to create chatroom model)
 # accepted - superclout accepts the offer, and brand cannot make changes to offer anymore
 # declined - superclout doesn't want it anymore
 # cancelled - owner doesn't want to work with the superclout/on their terms anymore
