@@ -15,6 +15,7 @@ class BrandsController < ApplicationController
     @listings = @brand.listings
     @listing = Listing.new
     authorize @brand
+
   end
 
   def new

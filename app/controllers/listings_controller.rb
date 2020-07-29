@@ -17,9 +17,9 @@ class ListingsController < ApplicationController
     @listing.brand = @brand
     authorize @listing
     if @listing.save
-      redirect_to brand_path(@brand)
+      redirect_to request.referrer, notice: "Listing created!"
     else
-      render "brands/show"
+      redirect_to request.referrer, alert: "Your listing couldn't be saved."
     end
   end
 
@@ -49,6 +49,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:product, :description, :photo)
+    params.require(:listing).permit(:product, :description, :photo, :city)
   end
 end
