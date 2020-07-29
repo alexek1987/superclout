@@ -3,7 +3,19 @@ class Listing < ApplicationRecord
   has_one_attached :photo
   validates :product, presence: :true
   validates :description, presence: :true
-  validates :cities, presence: true
-end
+  validates :city, presence: :true
+  validate :valid_city
 
-# city column needs to be added (can be multiple cities/or global, or one city) - done
+  def valid_city
+    if self.city.downcase != "global"
+      result = Geocoder.search(city)
+      if result[0]
+        self.city = result[0].city if result[0].city
+      else
+        errors.add(:city, "is not a valid city name.")
+      end
+    elsif self.city.downcase == "global"
+      self.city = "Global"
+    end
+  end
+end

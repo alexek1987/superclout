@@ -18,13 +18,13 @@
     <% end %>
   </div>
 </div>
-
 <div class="row">
   <div class="col-md-6 mx-auto">
     <h1>Add an influencer offer</h1>
     <%= simple_form_for [@brand, @listing] do |f| %>
     <%= f.input :product, placeholder: "What product are you offering our superclouts?" %>
-    <%=  f.input :description, placeholder: "Describe here what you are willing to offer to an influencer in return for their promotion.Describe what you want them to do for example, review the product on their social media, post, about the product, endorse the brand, recommend your brand/product, be seen in public wearing, using or with the product, upload pictures with the product, post about the product, share a post you create for them, make a short video using the product, offer your brand and your offer to other influencers.Remember, the more you ask them to do the more you need to be willing to give/pay themIndicative offer to influencers (what/how are you willing to pay them): " %>
+    <%= f.input :description, placeholder: "Describe the product and what you have in mind for a campaign - details of compensation will be discussed in the later stages." %>
+    <%= f.input :city, placeholder: "Where would you like to offer this listing?", hint: 'Type "Global" if you want this listing to be offered worldwide'%>
     <%= f.input :photo, as: :file, input_html: { required: true } %>
     <%= f.submit "Create listing", class: "btn btn-ghost" %>
     <% end %>

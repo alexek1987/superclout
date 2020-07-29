@@ -4,6 +4,7 @@
     <%= cl_image_tag @listing.photo.key if @listing.photo.attached? %>
   </div>
   <h2><%= @listing.product %></h4>
+  <h6><%= @listing.city %></h6>
   <p><%= @listing.description %></p>
   </div>
           <%= form_for [@listing, @campaign] do |f| %>
